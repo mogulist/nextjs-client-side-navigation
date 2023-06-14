@@ -1,38 +1,10 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Next.js의 Client-side navigation 분석
 
-## Getting Started
+### Client-side navigate to SSR page
 
-First, run the development server:
+SSR을 하는 페이지(getServerSideProps()가 정의되어 있는 페이지)로 Client-side navigation(이하 CSN)을 하는 경우
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+- SSR은 발생하지 않지만, 서버에 getServerSideProps() 를 요청한다.
+- 클라이언트는 getServerSideProps()가 리턴한 데이터로 CSR 한다
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
-
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
-
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+만약 A -> B로 CSN 하는데 B의 gSSP() 가 오래 걸리면 페이지 A 에 한참머무르게 되는 불편한 현상을 겪게 된다.

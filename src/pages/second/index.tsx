@@ -14,9 +14,11 @@ const Second = () => {
 
   return (
     <main className="p-4">
-      <h1>Second Page</h1>
-      <div>This page takes 5 seconds for server side fetch data</div>
-      <button onClick={handleClick}>Go Back</button>
+      <h1 className="text-2xl py-4">Second Page</h1>
+      <div className="flex flex-col gap-y-8">
+        <div>This page takes 5 seconds for server side fetch data</div>
+        <button onClick={handleClick}>{`< Go Back`}</button>
+      </div>
     </main>
   );
 };

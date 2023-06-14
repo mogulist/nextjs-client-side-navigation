@@ -10,11 +10,19 @@ const First = () => {
 
   return (
     <main className="p-4">
-      <h1>First Page</h1>
-      <div>This page takes 3 seconds for server side fetch data</div>
-      <Link href="/second">Client-side navigation to the second page</Link>
-      <button onClick={handleClick}>Shallow route to the second page</button>
-      <div>Shallow routing only works for URL changes in the current page</div>
+      <h1 className="text-2xl py-6">First Page</h1>
+      <div className="flex flex-col space-y-4">
+        <div>This page takes 3 seconds for server side fetch data</div>
+        <Link href="/second">
+          Client-side navigation to the second page {" >"}
+        </Link>
+        <div onClick={handleClick}>
+          Shallow route to the second page {" >"}
+          <div className="text-sm font-thin">
+            Shallow routing only works for URL changes in the current page
+          </div>
+        </div>
+      </div>
     </main>
   );
 };
