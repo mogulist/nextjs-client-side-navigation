@@ -1,3 +1,6 @@
+import "./globals.css";
+import RecoilProvider from "./recoil-provider";
+
 export default function RootLayout({
   children,
 }: {
@@ -5,7 +8,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <RecoilProvider>{children}</RecoilProvider>
     </html>
   );
 }

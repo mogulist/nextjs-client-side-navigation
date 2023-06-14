@@ -1,6 +1,7 @@
 import Link from "next/link";
 import React from "react";
 import { useRouter } from "next/router";
+import GlobalCounter from "@/components/GlobalCounter";
 
 const First = () => {
   const router = useRouter();
@@ -22,6 +23,7 @@ const First = () => {
             Shallow routing only works for URL changes in the current page
           </div>
         </div>
+        <GlobalCounter />
       </div>
     </main>
   );
