@@ -15,5 +15,9 @@ export default function App({
     });
   };
 
-  return <Component {...pageProps} />;
+  return (
+    <RecoilRoot initializeState={initializeState}>
+      <Component {...pageProps} />
+    </RecoilRoot>
+  );
 }
