@@ -8,7 +8,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <RecoilProvider>{children}</RecoilProvider>
+      <body>
+        <RecoilProvider>{children}</RecoilProvider>
+      </body>
     </html>
   );
 }
