@@ -1,19 +1,18 @@
 "use client";
 
-import { counterState } from "@/stores/counter.recoil";
-import { useRecoilState } from "recoil";
+import { useState } from "react";
 
-export default function GlobalCounter() {
-  const [count, setCount] = useRecoilState(counterState);
+export default function Counter() {
+  const [count, setCount] = useState(0);
 
   return (
     <div className="flex flex-col justify-start">
-      <div className="text-lg font-medium">Recoil counter</div>
-      <div className="flex justify-between space-x-6">
+      <div className="text-lg font-medium">Local state counter</div>
+      <div className="flex  justify-between space-x-6">
         <button className={buttonStyle} onClick={() => setCount(count - 1)}>
           -
         </button>
-        <p className="text-lg">You clicked {count} times</p>
+        <p className="text-xl">You clicked {count} times</p>
         <button className={buttonStyle} onClick={() => setCount(count + 1)}>
           +
         </button>
